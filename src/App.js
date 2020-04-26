@@ -3,7 +3,7 @@ import "./App.css"
 import { SearchTown } from "./components/searchTown"
 import { Cube } from "./components/cube/cube"
 import { Weather } from "./components/weather"
-
+import { Link } from "@reach/router"
 const App = () => {
   const [weather, setWeather] = useState({
     temperature: "",
@@ -37,6 +37,7 @@ const App = () => {
   return (
     <div className='container'>
       <Cube />
+      <Link to='/'>Home</Link>
       <SearchTown setTown={setTown} />
       <Weather weather={weather} />
     </div>
