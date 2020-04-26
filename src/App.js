@@ -38,7 +38,7 @@ const App = () => {
   return (
     <div className='container'>
       <Cube />
-      <Redirect from='/projekt01/' to='/'>
+      <Redirect from='projekt01/' to='/'>
         Home
       </Redirect>
       <SearchTown setTown={setTown} />
