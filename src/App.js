@@ -38,7 +38,7 @@ const App = () => {
   return (
     <div className='container'>
       <Cube />
-      <Link to='https://wilk6.github.io'>Home</Link>
+      <Link to='/'>Home</Link>
       <SearchTown setTown={setTown} />
       <Weather weather={weather} />
     </div>
