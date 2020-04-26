@@ -38,7 +38,7 @@ const App = () => {
   return (
     <div className='container'>
       <Cube />
-      <Redirect noThrow from='projekt01/' to='/'>
+      <Redirect from='projekt01/' to='https://wilk6.github.io'>
         Home
       </Redirect>
       <SearchTown setTown={setTown} />
