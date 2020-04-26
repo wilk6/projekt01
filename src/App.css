@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	color: black;
+	font-family: Allura-Regular;
+}
+html,body, #root   {
+	height: 100%;
+	width: 100%;
+}
+.container{
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-rows: 1fr 2fr 3fr 2fr;
+	background-color: wheat;
+	padding: 2em;
+}
+/*--------------------------------------------Cube------------------------------*/
+#cube--background{
+	grid-row: 1/2;
+	grid-column: 1/2;
+	place-self: center;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	perspective:300px;
+}
+#cube{
+	position:relative;
+	height: 100%;
+	width: 100%;
+	transform-style:preserve-3d;
+	animation: obrot 10s infinite alternate;
+
+
+}
+ .wall{
+	 line-height: 200%;
+	opacity: 0.9;
+	 position: absolute;
+	height: 100%;
+	width: 100%;
+	color: white;
+}
+.cube--front{
+	transform: translateZ(25px);
+	background-color: red;
+}
+.cube--back{
+	transform: translateZ(-25px) rotateY(180deg);
+	background-color: orange;
+}
+.cube--top{
+	transform: rotateX(90deg) translateZ(25px);
+	background-color: yellow;
+}
+.cube--bottom{
+	transform: rotateX(-90deg) translateZ(25px);
+	background-color: green;
+}
+.cube--left{
+	transform: rotateY(-90deg) translateZ(25px);
+	background-color: blue;
+}
+.cube--right{
+	transform: rotateY(90deg) translateZ(25px);
+	background-color: violet;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@keyframes obrot
+{
+  0% { transform:rotateX(0) rotateZ(0); }
+  100% { transform:rotateX(360deg) rotateZ(360deg); }
 }
+/*------------------------Search------------------*/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Search{
+	grid-row: 2/3;
+	grid-column: 2/3;
+	place-self: center;
 }
+.Search input{
+	height: 3em;
+	padding-left: 0.5em;
+	border-radius: 1em 0 0 1em;
+	font-size: 1em;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.Search button{
+	height: 3em;
+	padding: 0 1.5em 0 1.5em;
+	border: 0;
+	background-color: rgb(92, 26, 26);
+	font-size: 1em;
+	color: white;
+	border-radius: 0 1em 1em 0;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Search button:hover{
+	background-color: rgb(71, 21, 21);
+	box-shadow: black 0.3em 0.3em 0.8em;
+}
+/*------------------Weather--------------------*/
+.Weather{
+	grid-row: 3/4;
+	grid-column: 2/3;
+	justify-self: center;
+	font-size: 1.2em;
+	letter-spacing: 0;
+	font-style: italic;
+	font-family: 'Courier New', Courier, monospace;
+}
+.Weather span{
+	font-style: normal;
+	font-weight: bold;
 }
