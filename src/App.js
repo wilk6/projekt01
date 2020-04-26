@@ -3,7 +3,7 @@ import "./App.css"
 import { SearchTown } from "./components/searchTown"
 import { Cube } from "./components/cube/cube"
 import { Weather } from "./components/weather"
-import { Redirect } from "@reach/router"
+import { Link } from "@reach/router"
 
 const App = () => {
   const [weather, setWeather] = useState({
@@ -38,9 +38,7 @@ const App = () => {
   return (
     <div className='container'>
       <Cube />
-      <Redirect from='projekt01/' to='https://wilk6.github.io'>
-        Home
-      </Redirect>
+      <Link to='https://wilk6.github.io'>Home</Link>
       <SearchTown setTown={setTown} />
       <Weather weather={weather} />
     </div>
